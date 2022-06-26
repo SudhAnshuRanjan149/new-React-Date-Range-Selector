@@ -1,0 +1,80 @@
+html {
+  --cal-width: 20rem;
+
+  /* Start and End */
+  --start-border: 2px solid rgb(255, 175, 146);
+  --start-hover-border: 2px solid rgb(252, 141, 101);
+  --end-border: 2px solid rgb(161, 175, 253);
+  --end-hover-border: 2px solid rgb(114, 134, 252);
+
+  /* calender-show-date */
+  --cal-small-font-size: small;
+
+  --cal-font-weight-500: 500;
+
+  --font-weight-500: 500;
+
+  /* Width */
+  --width-1: 1rem;
+  --width-2-5: 2.5rem;
+
+  /* box-height */
+  --box-height-1: 2.2rem;
+
+  /* Box-shadow */
+  --box-shadow-1: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --box-shadow-2: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  /* font-size */
+  --font-size-1: 12px;
+
+  /* margin */
+  /* --margin-1: 0.1rem; */
+  --margin-1: .5%;
+  /* --margin-2: 0.2rem; */
+  --margin-2: 1%;
+  /* --margin-5: 0.5rem; */
+  --margin-5: 1%;
+
+  /* multi-margin */
+  --multi-margin-1: 0.3rem 0;
+  /* --multi-margin-1: 1.5% 0; */
+
+  /* padding */
+  /* --padding-1: 0.1rem; */
+  --padding-1: 0.5%;
+  /* --padding-2: 0.2rem; */
+  --padding-2: 1%;
+  --padding-5: 0.5rem;
+  /* --padding-5: 1%; */
+
+  /* multi-padding */
+  --multi-padding-1: 0 0.2rem 0 0.2rem;
+  --multi-padding-2: 2px 6px;
+
+  /* Border */
+  --border-1: 1px solid;
+  --border-2: 2px solid;
+
+  /* boder-radius */
+  --border-radius-1: 6px;
+
+  /* Border-color */
+  --border-1-color: blueviolet;
+  --border-2-color: coral;
+  --border-3-color: rgb(80, 106, 255);
+  --border-4-color: rgb(220, 220, 220);
+
+  /* Background-color */
+  --bg-color-1: rgb(191, 123, 255);
+  --bg-color-2: rgb(253, 171, 141);
+  --bg-color-3: rgb(144, 160, 250);
+  --bg-color-4: rgb(255, 226, 61);
+  --bg-color-5: rgb(238, 238, 238);
+  --bg-color-6: white;
+  --bg-color-7: rgb(224, 222, 222);
+
+  /* hover-bg-color */
+  --hover-bg-color-1: rgb(144, 160, 250);
+  --hover-bg-color-2: rgb(250, 157, 123);
+}
