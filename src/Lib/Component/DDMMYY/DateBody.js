@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import "./../Calender.css";
+import React, { useState } from "react";
+import "../Calender.css";
 import { removeClassFromMultipleDiv } from "../Logic/removeClassFromMultipleDiv";
 import { addClassToMultipleDivs } from "../Logic/addClassToMultipleDivs";
-import { addClassFromStartToEnd } from "../Logic/addClassFromStartToEnd";
 
 const DateBody = ({
   date,
@@ -17,10 +16,6 @@ const DateBody = ({
 }) => {
   let cl = `date ${clas}`;
 
-  const [startdate, setStartdate] = useState("");
-  const [enddate, setEnddate] = useState("");
-  const [dateRange, setDateRange] = useState({ startdate: "", enddate: "" });
-
   const [startPoint, setStartPoint] = useState("");
   const [endPoint, setEndPoint] = useState("");
 
@@ -32,7 +27,7 @@ const DateBody = ({
     cl += " today";
   }
 
-  let d = new Date(`${selectedYear}-${selectedMonth}-${date}`);
+  let da = new Date(`${selectedYear}-${selectedMonth}-${date}`);
 
   const handleClick = (e) => {
     let value = e.target.getAttribute("value");
@@ -71,7 +66,7 @@ const DateBody = ({
   };
 
   return (
-    <div onClick={(e) => handleClick(e)} value={d} key={d} className={cl}>
+    <div onClick={(e) => handleClick(e)} value={da} key={da} className={cl}>
       {date}
     </div>
   );

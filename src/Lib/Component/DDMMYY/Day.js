@@ -1,5 +1,5 @@
 import React from 'react';
-import './../Calender.css';
+import '../Calender.css';
 
 const Day = ({day}) => {
   return (

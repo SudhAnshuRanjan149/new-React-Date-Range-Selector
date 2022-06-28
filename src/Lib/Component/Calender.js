@@ -1,5 +1,5 @@
 // GLOBAL
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 // LOCAL
 import Year from "./DDMMYY/Year";
@@ -39,13 +39,7 @@ const Calender = ({ sd, ed, startYear, endYear, styleBigContainer }) => {
     endYear = ans[1];
   }
 
-  const Elem = [];
-
   let k = 0;
-
-  for (let i = 1; i <= (endYear - startYear) * 12 + 12; i++) {
-    Elem.push("Elem-" + i);
-  }
 
   const [show, setShow] = useState(false);
 

@@ -1,0 +1,217 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.calender {
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+  display: flex;
+}
+
+/* Days */
+.day {
+  padding: var(--multi-padding-2);
+  border: var(--border-1);
+
+  border-color: var(--border-4-color);
+  border-radius: var(--border-radius-1);
+
+  font-size: var(--font-size-1);
+
+  width: var(--width-2-5);
+
+  margin: var(--margin-1);
+
+  cursor: pointer;
+
+  text-transform: uppercase;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Date */
+.date {
+  padding: var(--multi-padding-2);
+  border: var(--border-1);
+  border-color: var(--border-4-color);
+  font-size: var(--font-size-1);
+
+  width: var(--width-2-5);
+  margin: var(--margin-1);
+
+  border-radius: var(--border-radius-1);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  text-align: center;
+}
+
+.date:hover {
+  background-color: var(--hover-bg-color-2);
+}
+
+.inactive {
+  background-color: var(--bg-color-7);
+}
+
+/* Common */
+.common {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  user-select: none;
+  width: var(--cal-width);
+}
+
+.dates-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Calender */
+.calender-container {
+  margin: var(--margin-5);
+  padding: var(--padding-5);
+  background-color: var(-bg-color-6);
+  box-shadow: var(--box-shadow-2);
+  font-weight: var(--font-weight-500);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  width: var(--cal-width);
+
+  height: fit-content;
+
+  position: relative;
+}
+
+.calender-header {
+  margin: var(--margin-2);
+  padding: var(--padding-2);
+  background-color: var(--bg-color-5);
+
+  width: 98%;
+}
+
+.calender-year-month-container {
+  margin: var(--margin-2);
+  padding: var(--padding-2);
+
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow-btn {
+  width: var(--width-1);
+  padding: var(--multi-padding-1);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.calender-days-container {
+  margin: var(--margin-2);
+  padding: var(--padding-1);
+  background-color: var(--bg-color-5);
+  width: 98%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* *************** */
+.month-div {
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--multi-margin-1);
+}
+
+.today {
+  background-color: var(--bg-color-1);
+  border: var(--border-1);
+  border-color: var(--border-1-color);
+}
+
+.startdate {
+  background-color: var(--bg-color-2);
+  border: var(--border-2);
+  border-color: var(--border-2-color);
+}
+.enddate {
+  background-color: var(--bg-color-3);
+  border: var(--border-2);
+  border-color: var(--border-3-color);
+}
+
+.startdate-to-enddate {
+  background-color: var(--bg-color-4);
+}
+
+.tobeselected:hover {
+  background-color: var(--hover-bg-color-1);
+}
+
+.calender-date-box {
+  height: var(--box-height-1);
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.calender-show-date {
+  margin: var(--margin-1);
+  padding: var(--padding-1);
+  font-size: var(--cal-small-font-size);
+  font-weight: var(--font-weight-500);
+  box-shadow: var(--box-shadow-1);
+
+  width: 46%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.start {
+  border: var(--start-border);
+}
+.end {
+  border: var(--end-border);
+}
+
+.start:hover {
+  border: var(--start-hover-border);
+}
+
+.end:hover {
+  border: var(--end-hover-border);
+}
+
+/* my-icon*/
+.my-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: car(--bg-color-7);
+  padding: 0.25rem;
+  border: var(--border-1);
+  border-radius: var(--border-radius-1);
+  border-color: var(--border-4-color);
+  margin: 0.5rem;
+  cursor: pointer;
+}

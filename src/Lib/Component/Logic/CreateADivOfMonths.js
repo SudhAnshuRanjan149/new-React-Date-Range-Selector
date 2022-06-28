@@ -1,6 +1,6 @@
 import React from "react";
-import Date from "../DDMMYY/Date";
-import "./../Calender.css";
+import Date from "../DDMMYY/DateBody";
+import "../Calender.css";
 import { fillArray } from "./fillArray";
 import { monthdaycombinations } from "../Data/dataList";
 import { isLeapYear } from "./findLeapYear";
@@ -34,9 +34,10 @@ const CreateADivOfMonths = ({
   });
 
   let premonthdays = monthdata[0].monthdays;
-  if (monthdata[0].monthid == 2 && isLeapYear(selectedYear)) {
-    premonthdays = 29;
+  if(monthdata[0].monthid == 2 && isLeapYear(selectedYear)){
+	premonthdays = 29;
   }
+
 
   let pre = [];
   for (let s of emparr) {

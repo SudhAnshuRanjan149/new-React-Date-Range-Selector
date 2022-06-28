@@ -1,5 +1,5 @@
 import React from "react";
-import "./../Calender.css";
+import "../Calender.css";
 import { findYearArray } from "../Logic/findYearArray";
 import { isLeapYear } from "../Logic/findLeapYear";
 
