@@ -215,3 +215,30 @@
   margin: 0.5rem;
   cursor: pointer;
 }
+
+
+/* Extra UI */
+.date-range-box{
+	border: var(--border-1);
+	border-color: var(--border-4-color);
+	margin: .1rem;
+	padding: .2rem;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+
+/* MOnth select box */
+.month-select-box{
+	background-color: white;
+	width: 20%;
+	padding: .2rem;
+}
+
+
+/* Year select box */
+.year-select-box{
+	background-color: white;
+	width: 20%;
+	padding: .2rem;
+}

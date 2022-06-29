@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Calender.css";
+import "./../Calender.css";
 import { removeClassFromMultipleDiv } from "../Logic/removeClassFromMultipleDiv";
 import { addClassToMultipleDivs } from "../Logic/addClassToMultipleDivs";
 

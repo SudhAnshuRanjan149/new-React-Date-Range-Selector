@@ -1,6 +1,6 @@
 {
   "name": "date-range-selector-for-react",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A component for simplify date range picking in react-js",
   "main": "dist/index.js",
   "module": "dist/index.js",

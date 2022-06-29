@@ -1,6 +1,6 @@
 import React from "react";
 import Date from "../DDMMYY/DateBody";
-import "../Calender.css";
+import "./../Calender.css";
 import { fillArray } from "./fillArray";
 import { monthdaycombinations } from "../Data/dataList";
 import { isLeapYear } from "./findLeapYear";

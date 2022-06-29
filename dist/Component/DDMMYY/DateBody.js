@@ -9,7 +9,7 @@ require("core-js/modules/web.dom-collections.iterator.js");
 
 var _react = _interopRequireWildcard(require("react"));
 
-require("../Calender.css");
+require("./../Calender.css");
 
 var _removeClassFromMultipleDiv = require("../Logic/removeClassFromMultipleDiv");
 

@@ -11,12 +11,26 @@ import { getShortDate } from "./Logic/getShortDate";
 import { swapNumber } from "./Logic/swapNumber";
 import CreateADivOfMonths from "./Logic/CreateADivOfMonths";
 import { ReactComponent as MyIcon } from "./SVG/cal-icon.svg";
+import DateRangeBox from "./ExtraUI/DateRangeBox";
 
 // CSS
 import "./Calender.css";
 import "./CSS/variables.css";
 
-const Calender = ({ sd, ed, startYear, endYear, styleBigContainer }) => {
+const Calender = ({
+  sd,
+  ed,
+  startYear,
+  endYear,
+  styleBigContainer,
+  startDate = "",
+  endDate = "",
+  showCalendar = true,
+  showIcon = true,
+  showDateRangeBox = true,
+  styleDateRangeBox = {},
+  calHeaderBodyElement = ""
+}) => {
   var today = new Date();
 
   today = {
@@ -41,13 +55,15 @@ const Calender = ({ sd, ed, startYear, endYear, styleBigContainer }) => {
 
   let k = 0;
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(showCalendar);
 
-  const [selectedStartDate, setSelectedStartDate] = useState("");
-  const [selectedEndDate, setSelectedEndDate] = useState("");
+  //   Long dates
+  const [selectedStartDate, setSelectedStartDate] = useState(startDate);
+  const [selectedEndDate, setSelectedEndDate] = useState(endDate);
 
-  const [startdate, setStartdate] = useState("");
-  const [enddate, setEnddate] = useState("");
+  //   Short Dates
+  const [startdate, setStartdate] = useState(startDate);
+  const [enddate, setEnddate] = useState(endDate);
 
   const [selectedMonth, setSelectedMonth] = useState(today.month);
   const [selectedYear, setSelectedYear] = useState(today.year);
@@ -106,16 +122,38 @@ const Calender = ({ sd, ed, startYear, endYear, styleBigContainer }) => {
     ed(d.toString());
   }, [selectedEndDate]);
 
+  useEffect(() => {
+    if (show !== showCalendar) {
+      setShow(showCalendar);
+    } else {
+      setShow(!showCalendar);
+    }
+  }, [showCalendar]);
+
   return (
     <>
       <div className="calender">
-        <div>
+        <div
+          title={`${startdate} - ${enddate}`}
+          style={showIcon ? { display: "block" } : { display: "none" }}
+        >
           <MyIcon onClick={() => setShow(!show)} className="my-icon" />
+        </div>
+
+        <div
+          style={showDateRangeBox ? { display: "block" } : { display: "none" }}
+        >
+          <DateRangeBox
+            style={styleDateRangeBox}
+            onClick={() => setShow(!show)}
+            startdate={startdate}
+            enddate={enddate}
+          />
         </div>
 
         <div style={show ? { display: "block" } : { display: "none" }}>
           <div className="calender-container" style={styleBigContainer}>
-            <div className="calender-header">calender</div>
+            <div className="calender-header">{calHeaderBodyElement === "" ? "calender" : calHeaderBodyElement}</div>
             <div className="calender-date-box">
               <div className="calender-show-date start">
                 {startdate != "" ? startdate : "Start Date"}
@@ -129,7 +167,7 @@ const Calender = ({ sd, ed, startYear, endYear, styleBigContainer }) => {
                 &#10094;
               </a>
               <div onClick={prevMonth} className="arrow-btn">
-                &#x3c;
+                &#171;
               </div>
 
               <Month
@@ -143,7 +181,7 @@ const Calender = ({ sd, ed, startYear, endYear, styleBigContainer }) => {
                 setSelectedYear={setSelectedYear}
               />
               <div onClick={nextMonth} className="arrow-btn">
-                &#x3e;
+                &#187;
               </div>
               <a onClick={nextYear} className="arrow-btn">
                 &#10095;

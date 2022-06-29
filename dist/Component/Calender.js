@@ -31,6 +31,8 @@ var _CreateADivOfMonths = _interopRequireDefault(require("./Logic/CreateADivOfMo
 
 var _calIcon = require("./SVG/cal-icon.svg");
 
+var _DateRangeBox = _interopRequireDefault(require("./ExtraUI/DateRangeBox"));
+
 require("./Calender.css");
 
 require("./CSS/variables.css");
@@ -50,7 +52,14 @@ const Calender = _ref => {
     ed,
     startYear,
     endYear,
-    styleBigContainer
+    styleBigContainer,
+    startDate = "",
+    endDate = "",
+    showCalendar = true,
+    showIcon = true,
+    showDateRangeBox = true,
+    styleDateRangeBox = {},
+    calHeaderBodyElement = ""
   } = _ref;
   var today = new Date();
   today = {
@@ -74,11 +83,13 @@ const Calender = _ref => {
   }
 
   let k = 0;
-  const [show, setShow] = (0, _react.useState)(false);
-  const [selectedStartDate, setSelectedStartDate] = (0, _react.useState)("");
-  const [selectedEndDate, setSelectedEndDate] = (0, _react.useState)("");
-  const [startdate, setStartdate] = (0, _react.useState)("");
-  const [enddate, setEnddate] = (0, _react.useState)("");
+  const [show, setShow] = (0, _react.useState)(showCalendar); //   Long dates
+
+  const [selectedStartDate, setSelectedStartDate] = (0, _react.useState)(startDate);
+  const [selectedEndDate, setSelectedEndDate] = (0, _react.useState)(endDate); //   Short Dates
+
+  const [startdate, setStartdate] = (0, _react.useState)(startDate);
+  const [enddate, setEnddate] = (0, _react.useState)(endDate);
   const [selectedMonth, setSelectedMonth] = (0, _react.useState)(today.month);
   const [selectedYear, setSelectedYear] = (0, _react.useState)(today.year);
   const [dateArray, setDateArray] = (0, _react.useState)([]);
@@ -131,11 +142,36 @@ const Calender = _ref => {
     setEnddate(d.toString());
     ed(d.toString());
   }, [selectedEndDate]);
+  (0, _react.useEffect)(() => {
+    if (show !== showCalendar) {
+      setShow(showCalendar);
+    } else {
+      setShow(!showCalendar);
+    }
+  }, [showCalendar]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "calender"
-  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_calIcon.ReactComponent, {
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    title: "".concat(startdate, " - ").concat(enddate),
+    style: showIcon ? {
+      display: "block"
+    } : {
+      display: "none"
+    }
+  }, /*#__PURE__*/_react.default.createElement(_calIcon.ReactComponent, {
     onClick: () => setShow(!show),
     className: "my-icon"
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    style: showDateRangeBox ? {
+      display: "block"
+    } : {
+      display: "none"
+    }
+  }, /*#__PURE__*/_react.default.createElement(_DateRangeBox.default, {
+    style: styleDateRangeBox,
+    onClick: () => setShow(!show),
+    startdate: startdate,
+    enddate: enddate
   })), /*#__PURE__*/_react.default.createElement("div", {
     style: show ? {
       display: "block"
@@ -147,7 +183,7 @@ const Calender = _ref => {
     style: styleBigContainer
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "calender-header"
-  }, "calender"), /*#__PURE__*/_react.default.createElement("div", {
+  }, calHeaderBodyElement === "" ? "calender" : calHeaderBodyElement), /*#__PURE__*/_react.default.createElement("div", {
     className: "calender-date-box"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "calender-show-date start"
@@ -161,7 +197,7 @@ const Calender = _ref => {
   }, "\u276E"), /*#__PURE__*/_react.default.createElement("div", {
     onClick: prevMonth,
     className: "arrow-btn"
-  }, "<"), /*#__PURE__*/_react.default.createElement(_Month.default, {
+  }, "\xAB"), /*#__PURE__*/_react.default.createElement(_Month.default, {
     selectedMonth: selectedMonth,
     setSelectedMonth: setSelectedMonth
   }), /*#__PURE__*/_react.default.createElement(_Year.default, {
@@ -172,7 +208,7 @@ const Calender = _ref => {
   }), /*#__PURE__*/_react.default.createElement("div", {
     onClick: nextMonth,
     className: "arrow-btn"
-  }, ">"), /*#__PURE__*/_react.default.createElement("a", {
+  }, "\xBB"), /*#__PURE__*/_react.default.createElement("a", {
     onClick: nextYear,
     className: "arrow-btn"
   }, "\u276F")), /*#__PURE__*/_react.default.createElement("div", {

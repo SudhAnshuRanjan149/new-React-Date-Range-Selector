@@ -9,7 +9,7 @@ require("core-js/modules/es.parse-int.js");
 
 var _react = _interopRequireDefault(require("react"));
 
-require("../Calender.css");
+require("./../Calender.css");
 
 var _findYearArray = require("../Logic/findYearArray");
 
@@ -29,7 +29,8 @@ const Year = _ref => {
     name: "year",
     id: "2",
     value: selectedYear,
-    onChange: e => setSelectedYear(e.target.value)
+    onChange: e => setSelectedYear(e.target.value),
+    className: "year-select-box"
   }, yearArr.map(year => {
     let days = 365;
 

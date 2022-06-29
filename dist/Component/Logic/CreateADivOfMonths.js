@@ -13,7 +13,7 @@ var _react = _interopRequireDefault(require("react"));
 
 var _DateBody = _interopRequireDefault(require("../DDMMYY/DateBody"));
 
-require("../Calender.css");
+require("./../Calender.css");
 
 var _fillArray = require("./fillArray");
 

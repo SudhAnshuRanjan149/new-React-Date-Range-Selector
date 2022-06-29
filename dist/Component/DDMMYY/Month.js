@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-require("../Calender.css");
+require("./../Calender.css");
 
 var _dataList = require("../Data/dataList");
 
@@ -22,7 +22,8 @@ const Month = _ref => {
     name: "month",
     id: "1",
     value: selectedMonth,
-    onChange: e => setSelectedMonth(e.target.value)
+    onChange: e => setSelectedMonth(e.target.value),
+    className: "month-select-box"
   }, _dataList.monthdaycombinations.map(month => {
     return /*#__PURE__*/_react.default.createElement("option", {
       key: month.monthid,
