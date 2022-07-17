@@ -150,7 +150,10 @@ const Calender = _ref => {
     }
   }, [showCalendar]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
-    className: "calender"
+    className: "calender",
+    style: {
+      backgroundColor: "white"
+    }
   }, /*#__PURE__*/_react.default.createElement("div", {
     title: "".concat(startdate, " - ").concat(enddate),
     style: showIcon ? {
@@ -223,7 +226,7 @@ const Calender = _ref => {
     key: ++k
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "dates-container",
-    key: ++k
+    key: k + 1
   }, dateArray.map(month => {
     if (dateArray[0].month == selectedMonth) {
       let emparr = [];

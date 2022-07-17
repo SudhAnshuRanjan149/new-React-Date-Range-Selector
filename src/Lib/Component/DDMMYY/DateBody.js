@@ -65,6 +65,9 @@ const DateBody = ({
     }
   };
 
+  // Add class for days
+  cl += " " + da.toString().slice(0, 3);
+
   return (
     <div onClick={(e) => handleClick(e)} value={da} key={da} className={cl}>
       {date}

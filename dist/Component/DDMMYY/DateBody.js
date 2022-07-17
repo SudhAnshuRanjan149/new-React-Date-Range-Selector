@@ -7,6 +7,8 @@ exports.default = void 0;
 
 require("core-js/modules/web.dom-collections.iterator.js");
 
+require("core-js/modules/es.regexp.to-string.js");
+
 var _react = _interopRequireWildcard(require("react"));
 
 require("./../Calender.css");
@@ -68,8 +70,10 @@ const DateBody = _ref => {
       setEndPoint("");
       e.target.classList.add("startdate");
     }
-  };
+  }; // Add class for days
 
+
+  cl += " " + da.toString().slice(0, 3);
   return /*#__PURE__*/_react.default.createElement("div", {
     onClick: e => handleClick(e),
     value: da,

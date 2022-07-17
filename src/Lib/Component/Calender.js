@@ -132,7 +132,7 @@ const Calender = ({
 
   return (
     <>
-      <div className="calender">
+      <div className="calender" style={{backgroundColor:"white"}}>
         <div
           title={`${startdate} - ${enddate}`}
           style={showIcon ? { display: "block" } : { display: "none" }}
@@ -193,7 +193,7 @@ const Calender = ({
               })}
             </div>
             <div className="calender-dates-container" key={++k}>
-              <div className="dates-container" key={++k}>
+              <div className="dates-container" key={k+1}>
                 {dateArray.map((month) => {
                   if (dateArray[0].month == selectedMonth) {
                     let emparr = [];
